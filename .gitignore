@@ -151,3 +151,25 @@ openssl/packages/
 !openssl/win64/lib/release/*.lib
 
 /Debug
+/Crypto/.vs/Crypto_vs150/v15/*.db-shm
+/Crypto/.vs/Crypto_vs150/v15/*.db-wal
+/Data/.vs/Data_vs150/v15/*.db-shm
+/Data/.vs/Data_vs150/v15/*.db-wal
+/Data/ODBC/.vs/ODBC_vs150/v15/*.db-shm
+/Data/ODBC/.vs/ODBC_vs150/v15/*.db-wal
+/Data/SQLite/.vs/SQLite_vs150/v15/*.db-shm
+/Data/SQLite/.vs/SQLite_vs150/v15/*.db-wal
+/Foundation/.vs/Foundation_vs150/v15/*.db-shm
+/Foundation/.vs/Foundation_vs150/v15/*.db-wal
+/JSON/.vs/JSON_vs150/v15/*.db-shm
+/JSON/.vs/JSON_vs150/v15/*.db-wal
+/Net/.vs/Net_vs150/v15/*.db-shm
+/Net/.vs/Net_vs150/v15/*.db-wal
+/NetSSL_OpenSSL/.vs/NetSSL_OpenSSL_vs150/v15/*.db-shm
+/NetSSL_OpenSSL/.vs/NetSSL_OpenSSL_vs150/v15/*.db-wal
+/NetSSL_Win/.vs/NetSSL_Win_vs150/v15/*.db-shm
+/NetSSL_Win/.vs/NetSSL_Win_vs150/v15/*.db-wal
+/Util/.vs/Util_vs150/v15/*.db-shm
+/Util/.vs/Util_vs150/v15/*.db-wal
+/XML/.vs/XML_vs150/v15/*.db-shm
+/XML/.vs/XML_vs150/v15/*.db-wal

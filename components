@@ -11,14 +11,11 @@ NetSSL_Win
 Data
 Data/ODBC
 Data/SQLite
-Data/MySQL
-Data/PostgreSQL
 Zip
 PageCompiler
 PageCompiler/File2Page
 PDF
 CppParser
-MongoDB
 Redis
 PocoDoc
 ProGen
