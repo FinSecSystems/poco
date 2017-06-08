@@ -18,7 +18,7 @@
 Param
 (
   [Parameter()]
-  [ValidateSet(90, 100, 110, 120, 140)]
+  [ValidateSet(90, 100, 110, 120, 140, 150)]
   [int] $vs_version = 120,
 
   [Parameter()]
@@ -95,7 +95,8 @@ function Load-DevelopmentTools {
     
     if ($vs_version -eq 0)
     {
-      if     ($Env:VS140COMNTOOLS -ne '') { $script:vs_version = 140 }
+      if     ($Env:VS150COMNTOOLS -ne '') { $script:vs_version = 150 }
+      elseif ($Env:VS140COMNTOOLS -ne '') { $script:vs_version = 140 }
       elseif ($Env:VS120COMNTOOLS -ne '') { $script:vs_version = 120 }
       elseif ($Env:VS110COMNTOOLS -ne '') { $script:vs_version = 110 }
       elseif ($Env:VS100COMNTOOLS -ne '') { $script:vs_version = 100 }
@@ -107,16 +108,19 @@ function Load-DevelopmentTools {
       }
     }
 
-    $vsct = "VS$($vs_version)COMNTOOLS"
-    $vsdir = (Get-Item Env:$vsct).Value
-    $Command = ''
-    if ($platform -eq 'x64')
+    if ($Env:VS150COMNTOOLS -eq '')
     {
-      $Command = "$($vsdir)..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
-    }
-    else
-    {
-      $Command = "$($vsdir)vsvars32.bat"
+        $vsct = "VS$($vs_version)COMNTOOLS"
+        $vsdir = (Get-Item Env:$vsct).Value
+        $Command = ''
+        if ($platform -eq 'x64')
+        {
+            $Command = "$($vsdir)..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
+        }
+        else
+        {
+            $Command = "$($vsdir)vsvars32.bat"
+        }
     }
 
     $tempFile = [IO.Path]::GetTempFileName()
@@ -270,7 +274,7 @@ function Compile-OpenSSL {
     # Set up nasm
     $env:Path = "$NASM_DIRECTORY;" + $env:Path
 
-    perl Configure $target --prefix="bin/$winplatform/$configuration"
+    perl Configure $target --prefix="." --openssldir="."
 
     # Run nasm
     cmd /c ms\do_nasm.bat
@@ -357,7 +361,7 @@ function Output-OpenSSL {
         $lib = "bin"
     }
 
-    xcopy /y bin\$winplatform\$configuration\lib\*.lib "$t\$lib\$configuration\*" 
+    xcopy /y lib\*.lib "$t\$lib\$configuration\*" 
     
     if (($configuration -eq "debug") -and ($library -eq "static")) {
         $tmp = Join-Path $OPENSSL_DIRECTORY "tmp32.dbg"

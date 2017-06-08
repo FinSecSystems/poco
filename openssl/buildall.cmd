@@ -1,2 +1,2 @@
-powershell -ExecutionPolicy RemoteSigned -File build.ps1 -vs_version 120 -config both -platform Win32 -library both
-powershell -ExecutionPolicy RemoteSigned -File build.ps1 -vs_version 120 -config both -platform x64 -library both
+rem powershell -ExecutionPolicy RemoteSigned -File build.ps1 -vs_version 150 -config both -platform Win32 -library both
+powershell -ExecutionPolicy RemoteSigned -File build.ps1 -vs_version 150 -config both -platform x64 -library both
