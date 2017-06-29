@@ -403,6 +403,8 @@ private:
 	template <typename F, typename T>
 	void checkUpperLimit(const F& from) const
 	{
+#pragma warning(push)
+#pragma warning(disable : 4127)
 		if ((sizeof(T) < sizeof(F)) &&
 			(from > static_cast<F>(std::numeric_limits<T>::max())))
 		{
@@ -413,6 +415,7 @@ private:
 		{
 			throw RangeException("Value too large.");
 		}
+#pragma warning(pop)
 	}
 
 	template <typename F, typename T>
