@@ -54,7 +54,7 @@ Object::~Object()
 
 
 Var Object::get(const std::string& key) const
-{
+ {
 	ValueMap::const_iterator it = _values.find(key);
 	if (it != _values.end())
 	{
