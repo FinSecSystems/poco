@@ -296,7 +296,6 @@ public:
 
 	const char* name() const;
 
-protected:
 	void initialize(Application& self);
 		/// Initializes the application and all registered subsystems.
 		/// Subsystems are always initialized in the exact same order
