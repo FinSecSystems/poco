@@ -44,6 +44,7 @@ if %VS_VERSION%==vs150 (
 ) else (
   set VS_VARSALL=..\..\VC\vcvarsall.bat
 )
+set VS_64_BIT_ENV=VC\bin\x86_amd64\vcvarsx86_amd64.bat
 
 shift /1
 rem ACTION [build|rebuild|clean]
@@ -121,7 +122,7 @@ if not defined VCINSTALLDIR (
         ) else (
           if %VS_VERSION%==vs140 (
             if %PLATFORM%==x64 (
-              call "%VS140COMNTOOLS%%VS_VARSALL%" x86_amd64
+              call "%VS140COMNTOOLS%..\..\%VS_64_BIT_ENV%"
             ) else (
               call "%VS140COMNTOOLS%%VS_VARSALL%" x86
             )
