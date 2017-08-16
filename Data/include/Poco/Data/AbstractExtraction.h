@@ -134,6 +134,7 @@ public:
 		/// the actual work.
 		///
 	{
+        (void)str;
 		return deflt;
 	}
 
@@ -211,6 +212,7 @@ inline Poco::UInt32 AbstractExtraction::getLimit() const
 
 inline bool AbstractExtraction::isNull(std::size_t row) const
 {
+    (void)row;
 	throw NotImplementedException("Check for null values not implemented.");
 }
 

@@ -87,7 +87,7 @@ public:
 	typedef SharedPtr<Type>     Ptr;
 
 	Extraction(T& rResult, const Position& pos = Position(0)):
-		AbstractExtraction(Limit::LIMIT_UNLIMITED, pos.value()),
+		AbstractExtraction((UInt32)Limit::LIMIT_UNLIMITED, pos.value()),
 		_rResult(rResult), 
 		_default(), 
 		_extracted(false),
@@ -130,6 +130,7 @@ public:
 
 	bool isNull(std::size_t row = 0) const
 	{
+        (void)row;
 		return _null;
 	}
 
@@ -179,7 +180,7 @@ public:
 	typedef SharedPtr<Type>     Ptr;
 
 	Extraction(std::vector<T>& rResult, const Position& pos = Position(0)): 
-		AbstractExtraction(Limit::LIMIT_UNLIMITED, pos.value()),
+		AbstractExtraction((UInt32)Limit::LIMIT_UNLIMITED, pos.value()),
 		_rResult(rResult), 
 		_default()
 	{
@@ -269,7 +270,7 @@ public:
 	typedef SharedPtr<Type>     Ptr;
 
 	Extraction(std::vector<bool>& rResult, const Position& pos = Position(0)): 
-		AbstractExtraction(Limit::LIMIT_UNLIMITED, pos.value()),
+		AbstractExtraction((UInt32)Limit::LIMIT_UNLIMITED, pos.value()),
 		_rResult(rResult), 
 		_default()
 	{
@@ -277,7 +278,7 @@ public:
 	}
 
 	Extraction(std::vector<bool>& rResult, const bool& def, const Position& pos = Position(0)): 
-		AbstractExtraction(Limit::LIMIT_UNLIMITED, pos.value()),
+		AbstractExtraction((UInt32)Limit::LIMIT_UNLIMITED, pos.value()),
 		_rResult(rResult), 
 		_default(def)
 	{

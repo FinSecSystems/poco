@@ -1404,6 +1404,7 @@ inline AbstractBinding::Ptr use(const NullData& t, const std::string& name = "")
 inline AbstractBinding::Ptr use(const NullValue& t, const std::string& name = "")
 /// NullData overload.
 {
+    (void)t;
 	return use(NullValue::nullCode<void>(), name);
 }
 
