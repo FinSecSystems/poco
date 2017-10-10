@@ -190,7 +190,7 @@ if "%BUILD_TOOL%"=="msbuild" (
   if "%USEENV%"=="noenv" set USEENV=/p:UseEnv=false
 
   set BUILD_TOOL_FLAGS=/clp:NoSummary
-  set BUILD_TOOL_FLAGS=!BUILD_TOOL_FLAGS! /nologo /v:%VERBOSITY%
+  set BUILD_TOOL_FLAGS=!BUILD_TOOL_FLAGS! /nologo /m /v:%VERBOSITY% 
 )
 if not "%BUILD_TOOL%"=="msbuild" (
   set USEENV=/useenv
