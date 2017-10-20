@@ -38,10 +38,10 @@ SHAREDLIBLINKEXT = .so
 #
 # Compiler and Linker Flags
 #
-CFLAGS          = 
+CFLAGS          = -shared-libgcc
 CFLAGS32        =
 CFLAGS64        = -arch x86_64
-CXXFLAGS        = -Wall -Wno-sign-compare
+CXXFLAGS        = -Wall -Wno-sign-compare -shared-libgcc
 CXXFLAGS32      =
 CXXFLAGS64      = -arch x86_64
 LINKFLAGS       =

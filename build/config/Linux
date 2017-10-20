@@ -38,13 +38,13 @@ SHAREDLIBLINKEXT = .so
 #
 # Compiler and Linker Flags
 #
-CFLAGS          = 
+CFLAGS          = -Wl,--no-as-needed -fexceptions -Wno-unknown-pragmas
 CFLAGS32        = 
 CFLAGS64        = 
-CXXFLAGS        = -Wall -Wno-sign-compare
+CXXFLAGS        = -Wall -Wno-sign-compare -fpermissive -Wl,--no-as-needed -frtti -fexceptions -Wno-unknown-pragmas
 CXXFLAGS32      = 
 CXXFLAGS64      = 
-SHLIBFLAGS      = 
+SHLIBFLAGS      = -shared-libgcc
 SHLIBFLAGS32    = 
 SHLIBFLAGS64    = 
 LIBFLAGS        = 
