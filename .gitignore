@@ -177,3 +177,4 @@ openssl/packages/
 /Foundation/samples/.vs/samples_x64_vs150/v15/Solution.VC.db-wal
 *.db-shm
 *.db-wal
+*.tss
