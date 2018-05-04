@@ -37,7 +37,7 @@ services:
 
   
 platform:
-  - Win32
+#  - Win32
   - x64
   
 # -------------------------------------------------------------------------------------------
@@ -58,11 +58,11 @@ environment:
 
   matrix:
 
-    - builder: cygwin
+#    - builder: cygwin
       
-    - builder: msbuild
-      vsver: 120
-      linkmode: shared
+#    - builder: msbuild
+#      vsver: 120
+#      linkmode: shared
 
 #    - builder: msbuild
 #      vsver: 120
@@ -84,11 +84,11 @@ environment:
 #      vsver: 140
 #      linkmode: static_mt
 
-    - builder: cmake
-      vsver: 120
+#    - builder: cmake
+#      vsver: 120
 
-    - builder: cmake
-      vsver: 140
+#    - builder: cmake
+#      vsver: 140
 
 
 matrix:
