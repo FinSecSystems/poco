@@ -5,7 +5,7 @@ POCO C++ Libraries
 Build Status
 ------------
 
-- Travis: [![Travis Build Status](https://travis-ci.org/pocoproject/poco.png?branch=develop)](https://travis-ci.org/pocoproject/poco)
+- Travis: [![Travis Build Status](https://travis-ci.org/FinSecSystems/poco.svg?branch=develop)](https://travis-ci.org/FinSecSystems/poco)
 - AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/m0pit85oqucmody0?svg=true)](https://ci.appveyor.com/project/FinSec/poco)
 - [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/370/badge)](https://bestpractices.coreinfrastructure.org/projects/370)
 
