@@ -1,15 +1,14 @@
 POCO C++ Libraries
 ==================
+- Branch for FinSec
 
 Build Status
 ------------
 
 - Travis: [![Travis Build Status](https://travis-ci.org/pocoproject/poco.png?branch=develop)](https://travis-ci.org/pocoproject/poco)
-- AppVeyor: [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/7iyrx3f233s3akae)](https://ci.appveyor.com/project/obiltschnig/poco)
+- AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/m0pit85oqucmody0?svg=true)](https://ci.appveyor.com/project/FinSec/poco)
 - [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/370/badge)](https://bestpractices.coreinfrastructure.org/projects/370)
 
-
-![alt text][logo]
 
 POrtable COmponents C++ Libraries are:
 --------------------------------------
