@@ -1,11 +1,11 @@
 version: build {branch}-{build}
 
 cache:
-  - C:\Program Files\MySQL\MySQL Server 5.7
-  - C:\ProgramData\chocolatey
-  - C:\OpenSSL-Win32
-  - C:\OpenSSL-Win64
-  - C:\Program Files\PostgreSQL\9.4
+#  - C:\Program Files\MySQL\MySQL Server 5.7
+#  - C:\ProgramData\chocolatey
+#  - C:\OpenSSL-Win32
+#  - C:\OpenSSL-Win64
+#  - C:\Program Files\PostgreSQL\9.4
 
 
 branches:
@@ -467,8 +467,6 @@ test_script:
   - ps: |
       $runs=0;$fails=0;$failedTests='';$status=0;$tab="`t";
       $line='-------------------------------------------------------------------------------------';
-      if ($env:configuration -eq "release")
-      {
         if ($env:builder -eq "cygwin")
         {
             $LastExitCode=0;
@@ -504,7 +502,7 @@ test_script:
           Write-Host -ForegroundColor Yellow $line;
           $components;
           Write-Host -ForegroundColor Yellow $line;
- 
+
           
           Write-Host excluded;
           Write-Host -ForegroundColor Yellow $line;
@@ -564,7 +562,6 @@ test_script:
         {
             $host.SetShouldExit(0);
         }
-      }
 
 on_success:        
   - echo success
@@ -578,16 +575,16 @@ on_finish:
 notifications:
   - provider: Email
     on_build_success: false
-    on_build_failure: false
+    on_build_failure: true
     on_build_status_changed: false
    
-  - provider: Slack
-    incoming_webhook: https://hooks.slack.com/services/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
-    auth_token:
-      secure: Xsss/K3VV9wZI9Ffwvafa67kyohNA437xJ3WA9fVI4w=
-    channel: appveyor
-    on_build_success: false
-    on_build_failure: true
-    on_build_status_changed: true
+#  - provider: Slack
+#    incoming_webhook: https://hooks.slack.com/services/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
+#    auth_token:
+#      secure: Xsss/K3VV9wZI9Ffwvafa67kyohNA437xJ3WA9fVI4w=
+#    channel: appveyor
+#    on_build_success: false
+#    on_build_failure: true
+#    on_build_status_changed: true
     
     
