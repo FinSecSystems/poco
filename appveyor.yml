@@ -1,11 +1,11 @@
 version: build {branch}-{build}
 
 cache:
-  - C:\mysql-5.7.17-win32
+  - C:\Program Files\MySQL\MySQL Server 5.7
   - C:\ProgramData\chocolatey
   - C:\OpenSSL-Win32
   - C:\OpenSSL-Win64
-  - C:\Program Files (x86)\PostgreSQL\9.4
+  - C:\Program Files\PostgreSQL\9.4
 
 
 branches:
@@ -46,16 +46,16 @@ platform:
 # -------------------------------------------------------------------------------------------
 configuration:
   - release
-#  - debug
+  - debug
 # -------------------------------------------------------------------------------------------
 
 environment:
   bundling: bundled
-  MYSQL32:    C:\mysql-5.7.17-win32
-  MYSQL64:    C:\Program Files\MySql\MySQL Server 5.6
-  POSTGRES32: C:\Program Files (x86)\PostgreSQL\9.4
+#  MYSQL32:    C:\mysql-5.7.17-win32
+  MYSQL64:    C:\Program Files\MySQL\MySQL Server 5.7
+#  POSTGRES32: C:\Program Files (x86)\PostgreSQL\9.4
   POSTGRES64: C:\Program Files\PostgreSQL\9.4
-
+  
   matrix:
 
 #    - builder: cygwin
@@ -76,13 +76,25 @@ environment:
       vsver: 140
       linkmode: shared
 
-#    - builder: msbuild
-#      vsver: 140
-#      linkmode: static_md
+    - builder: msbuild
+      vsver: 140
+      linkmode: static_md
 
-#    - builder: msbuild
-#      vsver: 140
-#      linkmode: static_mt
+    - builder: msbuild
+      vsver: 140
+      linkmode: static_mt
+      
+    - builder: msbuild
+      vsver: 150
+      linkmode: shared
+
+    - builder: msbuild
+      vsver: 150
+      linkmode: static_md
+
+    - builder: msbuild
+      vsver: 150
+      linkmode: static_mt      
 
 #    - builder: cmake
 #      vsver: 120
